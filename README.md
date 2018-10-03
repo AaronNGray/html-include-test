@@ -49,3 +49,5 @@ npm start
  - DefineElement.js MUST be async but BaseElement.js must be separate and not async ! Still trying to work out whty this is.
  - Edge is giving the following error :- SCRIPT438: Object doesn't support property or method 'bind' in extended-css.js (406,1).
  - FireFox is giving a very strange error.
+ - Chrome requires **&lt;style&gt;** to be within the **&lt;template&gt;**
+ 
