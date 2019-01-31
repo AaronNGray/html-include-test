@@ -17,9 +17,28 @@ class DefineElement extends HTMLElement {
     }
     connectedCallback() {
         console.log('DefineElement::connectedCallback()');
+
+        const scripts = Array.from(this.querySelectorAll(`script`));
+
+        console.log('DefineElement::connectedCallback::scripts = ', scripts);
+
+        scripts.forEach(function(script) {
+            document.head.appendChild(script);
+        });
+
+        //var helloworld = new HelloWorld()
+
         var name = this.getAttribute('name');
         var className = kebabToCamel(name);
-        var classObject = evalInContext(className);
+        var classObject = null;
+        try
+        {
+            classObject = evalInContext(className);
+        }
+        catch (e)
+        {
+            console.error("connectedCallback:evalInContext: ", e);
+        }
         console.log("  Register class ", className, " as Custom Element ", name);
 
         window.customElements.define(name, classObject);

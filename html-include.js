@@ -39,6 +39,7 @@ console.log("html-include:init");
             clone = document.importNode(template.content, true);
             importHTML(clone);
             map[script.src] = clone.cloneNode(true);
+            console.log("script.replaceWith(clone);");
             script.replaceWith(clone);
           } else {
             console.error(xhr.statusText);
