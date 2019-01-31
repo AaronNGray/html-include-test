@@ -1,0 +1,38 @@
+<define-element name="hello-world">
+    <template>
+        <style>
+            .outer {
+                border: 1px solid red;
+            }
+        </style>
+        <div class="outer">
+            Hello World !
+        </div>
+    </template>
+
+    <script>
+
+        console.log("HelloWorld.html:script");
+
+        class HelloWorld extends BaseElement {
+
+            // Web Component Methods
+            constructor() {
+                super();
+                console.log('HelloWorld::constructor()');
+            }
+            connectedCallback() {
+                console.log('HelloWorld::connectedCallback()');
+                this.render();
+            }
+            disconnectedCallback() {
+                console.log('HelloWorld::disconnectedCallback()');
+            }
+            attributeChangedCallback(name, oldValue, newValue) {
+                console.log('HelloWorld::attributeChangedCallback()');
+            }
+            static get observedAttributes() {return []; }
+        };
+
+    </script>
+</define-element>

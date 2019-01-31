@@ -5,47 +5,12 @@
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-bundle.js"></script>
     <script async src="DefineElement.js"></script>
     <script src="BaseElement.js"></script>
+    <script type="text/html" src="HelloWorld.html"></script>
+    <script type="module" src="html-include.js"></script>
 </head>
 <body>
 
     <hello-world></hello-world>
-
-    <define-element name="hello-world">
-        <template>
-            <style>
-                .outer {
-                    border: 1px solid red;
-                }
-            </style>
-            <div class="outer">
-                Hello World !
-            </div>
-        </template>
-
-        <script>
-
-            class HelloWorld extends BaseElement {
-
-                // Web Component Methods
-                constructor() {
-                    super();
-                    console.log('HelloWorld::constructor()');
-                }
-                connectedCallback() {
-                    console.log('HelloWorld::connectedCallback()');
-                    this.render();
-                }
-                disconnectedCallback() {
-                    console.log('HelloWorld::disconnectedCallback()');
-                }
-                attributeChangedCallback(name, oldValue, newValue) {
-                    console.log('HelloWorld::attributeChangedCallback()');
-                }
-                static get observedAttributes() {return []; }
-            };
-
-        </script>
-    </define-element>
 
 </body>
 </html>

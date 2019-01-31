@@ -1,0 +1,31 @@
+html-include.js:12 html-include:init
+html-include.js:18 html-include:init:script =  <script src=​"https:​/​/​unpkg.com/​@webcomponents/​webcomponentsjs@2.1.3/​webcomponents-bundle.js">​</script>​ type =  null
+html-include.js:18 html-include:init:script =  <script async src=​"DefineElement.js">​</script>​ type =  null
+html-include.js:18 html-include:init:script =  <script src=​"BaseElement.js">​</script>​ type =  null
+html-include.js:18 html-include:init:script =  <script type=​"text/​html" src=​"HelloWorld.html">​</script>​ type =  text/html
+html-include.js:18 html-include:init:script =  <script type=​"module" src=​"html-include.js">​</script>​ type =  module
+html-include.js:36 html-include:xhr
+DefineElement.js:16 DefineElement::constructor()
+DefineElement.js:31 DefineElement::attributeChangedCallback()
+html-include.js:12 html-include:init
+html-include.js:18 html-include:init:script =  <script>​…​</script>​ type =  null
+DefineElement.js:16 DefineElement::constructor()
+DefineElement.js:31 DefineElement::attributeChangedCallback()
+DefineElement.js:19 DefineElement::connectedCallback()
+VM3515:1 Uncaught ReferenceError: HelloWorld is not defined
+    at eval (eval at <anonymous> (DefineElement.js:7), <anonymous>:1:1)
+    at Object.<anonymous> (DefineElement.js:7)
+    at evalInContext (DefineElement.js:7)
+    at HTMLElement.connectedCallback (DefineElement.js:22)
+    at XMLHttpRequest.xhr.onload (html-include.js:42)
+(anonymous) @ VM3515:1
+(anonymous) @ DefineElement.js:7
+evalInContext @ DefineElement.js:7
+connectedCallback @ DefineElement.js:22
+xhr.onload @ html-include.js:42
+load (async)
+(anonymous) @ html-include.js:31
+importHTML @ html-include.js:16
+(anonymous) @ html-include.js:60
+Observer.js:21 undefined
+Observer.js:21 undefined
