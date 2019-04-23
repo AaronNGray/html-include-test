@@ -13,44 +13,23 @@ class DefineElement extends HTMLElement {
 
     constructor() {
         super();
-        console.log('DefineElement::constructor()');
-/*
-        const scripts = Array.from(this.querySelectorAll(`script`));
-
-        console.log('DefineElement::connectedCallback::scripts = ', scripts);
-
-        scripts.forEach(function(script) {
-            const newScriptElement = document.createElement("script");
-            newScriptElement.innerText = script.innerText;
-            document.head.appendChild(newScriptElement);
-        });
-*/
     }
     connectedCallback() {
-        console.log('DefineElement::connectedCallback()');
-
-        //var helloworld = new HelloWorld()
-
         var name = this.getAttribute('name');
         var className = kebabToCamel(name);
         var classObject = null;
-        try
-        {
+        try {
             classObject = evalInContext(className);
         }
-        catch (e)
-        {
+        catch (e) {
             console.error("connectedCallback:evalInContext: ", e);
         }
-        console.log("  Register class ", className, " as Custom Element ", name);
 
         window.customElements.define(name, classObject);
     }
     disconnectedCallback() {
-        console.log('DefineElement::disconnectedCallback()');
     }
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log('DefineElement::attributeChangedCallback()');
     }
     static get observedAttributes() {return ['name']; }
 
@@ -62,6 +41,35 @@ class DefineElement extends HTMLElement {
 };
 
 document.addEventListener("HTMLIncludesLoaded", function(event) {
-    console.log("Event: HTMLIncludesLoaded:window.customElements.define('define-element', DefineElement);");
     window.customElements.define('define-element', DefineElement);
 });
+
+class BaseElement extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        this.render();
+    }
+    disconnectedCallback() {
+    }
+    attributeChangedCallback(name, oldValue, newValue) {
+    }
+    static get observedAttributes() {return []; }
+
+    //
+
+    render(element, template) {
+        if (arguments.length < 2) {
+            template = element;
+            element = this;
+        }
+
+        template = template || "template";
+        template = (typeof template === "string") ? document.querySelector(template) : template;
+
+        var shadow = element.attachShadow({mode: 'open'});
+        var clone = document.importNode(template.content, true);
+        shadow.appendChild(clone);
+    }
+}

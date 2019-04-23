@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    /*
+        document.addEventListener("DOMContentLoaded", function(event) {
+            console.log("Event: DOMContentLoaded");
+        });
+        document.addEventListener("WebComponentsReady", function(event) {
+            console.log("Event: WebComponentsReady");
+        });
+        document.addEventListener("HTMLIncludesLoaded", function(event) {
+            console.log("Event: HTMLIncludesLoaded");
+        });
+    */
+    </script>
+    <!-- Copyright (c) 2018 Aaron Nathaniel Gray  -->
+    <script src="webcomponents-loader-instrumented.js"></script>
+    <script async src="CustomElement.js"></script>
+    <script src="html-includes-instrumented-2.js"></script>
+    <link rel="include" href="HelloWorld.html"/>
+</head>
+<body>
+
+    <hello-world></hello-world>
+
+</body>
+</html>

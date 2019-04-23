@@ -1,0 +1,95 @@
+html-includes.js - HTMLIncludesTest.html
+
+
+needsTemplate
+webcomponents-loader-instrumented.js:183 if (!polyfills.length)
+webcomponents-loader-instrumented.js:189 if (document.readyState !== 'complete')
+html-includes-instrumented.js:11 html-includes-instrumented.js:start
+html-includes-instrumented.js:660 whenDocumentReady()
+html-includes-instrumented.js:648 whenReady()
+html-includes-instrumented.js:660 whenDocumentReady()
+html-includes-instrumented.js:809 html-includes-instrumented.js:end
+html-includes-instrumented.js:234 class Includer
+html-includes-instrumented.js:256 Includer::loadIncludes()
+html-includes-instrumented.js:266 Includer::loadInclude('http://localhost/HelloWorld.html')
+html-includes-instrumented.js:626 whenIncludesReady()
+html-includes-instrumented.js:594 whenElementLoaded()
+HTMLIncludesTest.html:6 Event: DOMContentLoaded
+webcomponents-loader-instrumented.js:193 window.addEventListener('DOMContentLoaded', ...)
+webcomponents-loader-instrumented.js:72 ready()
+webcomponents-loader-instrumented.js:82 runWhenLoadedFns()
+webcomponents-loader-instrumented.js:48 fireEvent()
+HTMLIncludesTest.html:9 Event: WebComponentsReady
+html-includes-instrumented.js:304 Includer::makeDocument()
+html-includes-instrumented.js:69 replaceScripts()
+html-includes-instrumented.js:69 replaceScripts()
+html-includes-instrumented.js:594 whenElementLoaded()
+html-includes-instrumented.js:256 Includer::loadIncludes()
+html-includes-instrumented.js:378 Includer::processIncludesIfLoadingDone()
+html-includes-instrumented.js:423 Includer::flatten()
+html-includes-instrumented.js:423 Includer::flatten()
+DefineElement.js:16 DefineElement::constructor()
+DefineElement.js:53 DefineElement::attributeChangedCallback()
+DefineElement.js:30 DefineElement::connectedCallback()
+DefineElement.js:43 connectedCallback:evalInContext:  ReferenceError: HelloWorld is not defined
+    at eval (eval at <anonymous> (DefineElement.js:7), <anonymous>:1:1)
+    at Object.<anonymous> (DefineElement.js:7)
+    at evalInContext (DefineElement.js:7)
+    at HTMLElement.connectedCallback (DefineElement.js:39)
+    at n (html-includes-instrumented.js:436)
+    at forEach (html-includes-instrumented.js:47)
+    at Includer.flatten (html-includes-instrumented.js:426)
+    at Includer.processIncludesIfLoadingDone (html-includes-instrumented.js:384)
+    at Xhr.load (html-includes-instrumented.js:288)
+    at XMLHttpRequest.request.onload (html-includes-instrumented.js:188)
+connectedCallback @ DefineElement.js:43
+n @ html-includes-instrumented.js:436
+forEach @ html-includes-instrumented.js:47
+flatten @ html-includes-instrumented.js:426
+processIncludesIfLoadingDone @ html-includes-instrumented.js:384
+Xhr.load @ html-includes-instrumented.js:288
+request.onload @ html-includes-instrumented.js:188
+load (async)
+    load @ html-includes-instrumented.js:173
+    loadInclude @ html-includes-instrumented.js:282
+    link @ html-includes-instrumented.js:259
+    forEach @ html-includes-instrumented.js:47
+    loadIncludes @ html-includes-instrumented.js:259
+    Includer @ html-includes-instrumented.js:249
+    whenDocumentReady @ html-includes-instrumented.js:780
+    stateChanged @ html-includes-instrumented.js:666
+DefineElement.js:45   Register class  HelloWorld  as Custom Element  hello-world
+DefineElement.js:47 Uncaught TypeError: Failed to execute 'define' on 'CustomElementRegistry': The callback provided as parameter 2 is not a function.
+    at HTMLElement.connectedCallback (DefineElement.js:47)
+    at n (html-includes-instrumented.js:436)
+    at forEach (html-includes-instrumented.js:47)
+    at Includer.flatten (html-includes-instrumented.js:426)
+    at Includer.processIncludesIfLoadingDone (html-includes-instrumented.js:384)
+    at Xhr.load (html-includes-instrumented.js:288)
+    at XMLHttpRequest.request.onload (html-includes-instrumented.js:188)
+connectedCallback @ DefineElement.js:47
+    n @ html-includes-instrumented.js:436
+    forEach @ html-includes-instrumented.js:47
+    flatten @ html-includes-instrumented.js:426
+    processIncludesIfLoadingDone @ html-includes-instrumented.js:384
+    Xhr.load @ html-includes-instrumented.js:288
+    request.onload @ html-includes-instrumented.js:188
+load (async)
+    load @ html-includes-instrumented.js:173
+    loadInclude @ html-includes-instrumented.js:282
+    link @ html-includes-instrumented.js:259
+    forEach @ html-includes-instrumented.js:47
+    loadIncludes @ html-includes-instrumented.js:259
+    Includer @ html-includes-instrumented.js:249
+    whenDocumentReady @ html-includes-instrumented.js:780
+    stateChanged @ html-includes-instrumented.js:666
+html-includes-instrumented.js:481 Includer::waitForStyles()
+html-includes-instrumented.js:447 Includer::runScripts()
+html-includes-instrumented.js:594 whenElementLoaded()
+HelloWorld.html.js:3 HelloWorld.html:script
+html-includes-instrumented.js:256 Includer::loadIncludes()
+html-includes-instrumented.js:266 Includer::loadInclude('http://localhost/HelloWorld.html')
+html-includes-instrumented.js:532 Includer::fireEvents()
+html-includes-instrumented.js:544 Includer::fireEventIfNeeded()
+html-includes-instrumented.js:714 newCustomEvent()
+html-includes-instrumented.js:714 newCustomEvent()
